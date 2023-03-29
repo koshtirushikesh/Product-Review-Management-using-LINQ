@@ -59,5 +59,16 @@ namespace ProductReviewManagementUsingLINQ
                 Console.WriteLine(" " + product.ProductId + " " + product.UserId + " " + product.Rating + " " + product.Review + " " + product.isLike);
             }
         }
+
+        // uc9
+        public void RetriveIsLikeTrue(List<ProductReviewModel> productReviewModels)
+        {
+            var result = productReviewModels.Where(p => p.isLike == true);
+
+            foreach (var product in result)
+            {
+                Console.WriteLine(" " + product.ProductId + " " + product.UserId + " " + product.Rating + " " + product.Review + " " + product.isLike);
+            }
+        }
     }
 }
