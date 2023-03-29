@@ -41,5 +41,13 @@ namespace ProductReviewManagementUsingLINQ
             foreach (var product in groupOfProductId)
                 Console.WriteLine("Product id: " + product.ProductId + " count: " + product.Count);
         }
+
+        public void RetrivOnlyProductIdAndReview(List<ProductReviewModel> productReviewModels)
+        {
+            var listOfProductId = productReviewModels.Select(p => new { p.ProductId, p.Review }).ToList();
+
+            foreach (var product in listOfProductId)
+                Console.WriteLine(" Product id: " + product.ProductId + " -> " + product.Review);
+        }
     }
 }
