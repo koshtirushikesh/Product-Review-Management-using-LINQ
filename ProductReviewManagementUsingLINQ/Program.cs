@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ProductReviewManagementUsingLINQ
 {
@@ -26,6 +27,31 @@ namespace ProductReviewManagementUsingLINQ
                 new ProductReviewModel { ProductId = 11 , UserId = 6 , Rating = 1 , Review = "Bad", isLike = false  },
                 new ProductReviewModel { ProductId = 11 , UserId = 5 , Rating = 1 , Review = "Bad", isLike = false  },
             };
+            bool flage = true;
+
+            Managment managment = new Managment();
+
+            while (flage)
+            {
+                Console.WriteLine("\n1. Add Product" +
+                    "\n2. Display Products" +
+                    "\n3. top 3 records"
+                    );
+                Console.WriteLine("5. Exit the program");
+
+                Console.Write("\nEnter option: ");
+                int option = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("");
+
+                switch (option)
+                {
+                    case 1: managment.AddProductReview(listOfProductReview); break;
+                    case 2: managment.DisplayProductReviewList(listOfProductReview); break;
+                    case 3: managment.RetriveTop3Records(listOfProductReview); break;
+                    case 4: break;
+                    case 5: flage = false; break;
+                }
+            }
 
         }
     }
