@@ -65,6 +65,8 @@ namespace ProductReviewManagementUsingLINQ
                     case 8: managment.RetriveIsLikeTrue(listOfProductReview); break;
                     case 9: managment.AverageRatingForEachProduct(listOfProductReview); break;
                     case 10: managment.RetriveNiceMessageRecordFromList(listOfProductReview); break;
+                    case 11: managment.RetriveUserIdDataByRating(listOfProductReview); break;
+
                     case 12: flage = false; break;
                 }
             }

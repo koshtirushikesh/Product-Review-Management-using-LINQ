@@ -88,5 +88,14 @@ namespace ProductReviewManagementUsingLINQ
             foreach (var product in result)
                 Console.WriteLine(" " + product.ProductId + " " + product.UserId + " " + product.Rating + " " + product.Review + " " + product.isLike);
         }
+
+        //uc12
+        public void RetriveUserIdDataByRating(List<ProductReviewModel> productReviewModels)
+        {
+            var result = productReviewModels.Where(p => p.UserId == 10).OrderBy(p => p.Rating);
+
+            foreach (var product in result)
+                Console.WriteLine(" " + product.ProductId + " " + product.UserId + " " + product.Rating + " " + product.Review + " " + product.isLike);
+        }
     }
 }
