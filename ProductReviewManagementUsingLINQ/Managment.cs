@@ -29,5 +29,11 @@ namespace ProductReviewManagementUsingLINQ
             var result = productReviewModels.OrderByDescending(p => p.Rating).Take(3);
             DisplayProductReviewList(result.ToList());
         }
+
+        public void RetriveProductRaringGreaterThen3(List<ProductReviewModel> productReviewModels)
+        {
+            var result = productReviewModels.Where(p => p.Rating > 3 && (p.ProductId == 1 || p.ProductId == 4 || p.ProductId == 9));
+            DisplayProductReviewList(result.ToList());
+        }
     }
 }
