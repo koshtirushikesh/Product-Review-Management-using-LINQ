@@ -64,6 +64,7 @@ namespace ProductReviewManagementUsingLINQ
                     case 7: managment.SkipTop5RecordsFromProductList(listOfProductReview); break;
                     case 8: managment.RetriveIsLikeTrue(listOfProductReview); break;
                     case 9: managment.AverageRatingForEachProduct(listOfProductReview); break;
+                    case 10: managment.RetriveNiceMessageRecordFromList(listOfProductReview); break;
                     case 12: flage = false; break;
                 }
             }

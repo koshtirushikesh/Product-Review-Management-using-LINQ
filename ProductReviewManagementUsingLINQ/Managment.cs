@@ -79,5 +79,14 @@ namespace ProductReviewManagementUsingLINQ
             foreach (var product in result)
                 Console.WriteLine("Product id: " + product.ProductId + " Avg: " + product.average);
         }
+
+        // uc11
+        public void RetriveNiceMessageRecordFromList(List<ProductReviewModel> productReviewModels)
+        {
+            var result = productReviewModels.Where(p => p.Review == "nice");
+
+            foreach (var product in result)
+                Console.WriteLine(" " + product.ProductId + " " + product.UserId + " " + product.Rating + " " + product.Review + " " + product.isLike);
+        }
     }
 }
