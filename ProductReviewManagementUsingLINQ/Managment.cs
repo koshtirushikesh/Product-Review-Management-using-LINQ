@@ -70,5 +70,14 @@ namespace ProductReviewManagementUsingLINQ
                 Console.WriteLine(" " + product.ProductId + " " + product.UserId + " " + product.Rating + " " + product.Review + " " + product.isLike);
             }
         }
+
+        // uc10
+        public void AverageRatingForEachProduct(List<ProductReviewModel> productReviewModels)
+        {
+            var result = productReviewModels.GroupBy(p => p.ProductId).Select(p => new { ProductId = p.Key, average = p.Average(x => x.Rating) });
+
+            foreach (var product in result)
+                Console.WriteLine("Product id: " + product.ProductId + " Avg: " + product.average);
+        }
     }
 }
