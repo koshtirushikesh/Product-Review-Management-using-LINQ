@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProductReviewManagementUsingLINQ
 {
@@ -10,7 +8,7 @@ namespace ProductReviewManagementUsingLINQ
     {
         List<ProductReviewModel> listOfProductModels = new List<ProductReviewModel>();
 
-        public void AddProductReview(List<ProductReviewModel> productReviewModels )
+        public void AddProductReview(List<ProductReviewModel> productReviewModels)
         {
             this.listOfProductModels = productReviewModels;
             Console.WriteLine("Review added successfully.");
@@ -20,7 +18,7 @@ namespace ProductReviewManagementUsingLINQ
         {
             foreach (ProductReviewModel product in productReviewModels)
             {
-                Console.WriteLine(" "+ product.ProductId+ " "+ product.UserId+ " "+ product.Rating+ " "+ product.Review+" "+product.isLike);
+                Console.WriteLine(" " + product.ProductId + " " + product.UserId + " " + product.Rating + " " + product.Review + " " + product.isLike);
             }
         }
 
@@ -34,6 +32,14 @@ namespace ProductReviewManagementUsingLINQ
         {
             var result = productReviewModels.Where(p => p.Rating > 3 && (p.ProductId == 1 || p.ProductId == 4 || p.ProductId == 9));
             DisplayProductReviewList(result.ToList());
+        }
+
+        public void CountOfReview(List<ProductReviewModel> productReviewModels)
+        {
+            var groupOfProductId = productReviewModels.GroupBy(p => p.ProductId).Select(p => new { ProductId = p.Key, Count = p.Count() });
+
+            foreach (var product in groupOfProductId)
+                Console.WriteLine("Product id: " + product.ProductId + " count: " + product.Count);
         }
     }
 }

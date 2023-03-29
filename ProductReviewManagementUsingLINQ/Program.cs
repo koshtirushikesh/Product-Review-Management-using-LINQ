@@ -35,7 +35,9 @@ namespace ProductReviewManagementUsingLINQ
             {
                 Console.WriteLine("\n1. Add Product" +
                     "\n2. Display Products" +
-                    "\n3. top 3 records"
+                    "\n3. top 3 records" +
+                    "\n4. Product Rating Greater Than 3 And product id 1,4,9" +
+                    "\n5. Count Of review for each product"
                     );
                 Console.WriteLine("5. Exit the program");
 
@@ -49,7 +51,9 @@ namespace ProductReviewManagementUsingLINQ
                     case 2: managment.DisplayProductReviewList(listOfProductReview); break;
                     case 3: managment.RetriveTop3Records(listOfProductReview); break;
                     case 4: managment.RetriveProductRaringGreaterThen3(listOfProductReview); break;
-                    case 5: flage = false; break;
+                    case 5: managment.CountOfReview(listOfProductReview); break;
+                    case 6: break;
+                    case 7: flage = false; break;
                 }
             }
 
