@@ -54,7 +54,8 @@ namespace ProductReviewManagementUsingLINQ
                     case 4: managment.RetriveProductRaringGreaterThen3(listOfProductReview); break;
                     case 5: managment.CountOfReview(listOfProductReview); break;
                     case 6: managment.RetrivOnlyProductIdAndReview(listOfProductReview); break;
-                    case 7: flage = false; break;
+                    case 7: managment.SkipTop5RecordsFromProductList(listOfProductReview); break;
+                    case 8: flage = false; break;
                 }
             }
 
