@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 
 namespace ProductReviewManagementUsingLINQ
@@ -96,6 +97,37 @@ namespace ProductReviewManagementUsingLINQ
 
             foreach (var product in result)
                 Console.WriteLine(" " + product.ProductId + " " + product.UserId + " " + product.Rating + " " + product.Review + " " + product.isLike);
+        }
+
+        public DataTable CreatingDataTable(List<ProductReviewModel> productReviewModels)
+        {
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.Add("ProductId", typeof(int));
+            dataTable.Columns.Add("UserId", typeof(int));
+            dataTable.Columns.Add("Rating", typeof(int));
+            dataTable.Columns.Add("Review", typeof(string));
+            dataTable.Columns.Add("IsLike", typeof(bool));
+
+            foreach (var data in productReviewModels)
+            {
+                dataTable.Rows.Add(data.ProductId, data.UserId, data.Rating, data.Review, data.isLike);
+            }
+            return dataTable;
+        }
+
+        public void PrintDataTable(DataTable dataTable)
+        {
+            Console.Write("ProductId " + " UserId " + " Rating " + " Review " + " IsLike \n");
+
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                Console.WriteLine();
+                for (int i = 0; i < dataRow.ItemArray.Length; i++)
+                {
+                    Console.Write(dataRow.ItemArray[i] + "   ");
+                }
+            }
         }
     }
 }

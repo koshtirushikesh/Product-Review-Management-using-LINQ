@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 
 namespace ProductReviewManagementUsingLINQ
 {
@@ -66,8 +68,11 @@ namespace ProductReviewManagementUsingLINQ
                     case 9: managment.AverageRatingForEachProduct(listOfProductReview); break;
                     case 10: managment.RetriveNiceMessageRecordFromList(listOfProductReview); break;
                     case 11: managment.RetriveUserIdDataByRating(listOfProductReview); break;
+                    case 12:managment.CreatingDataTable(listOfProductReview); break;
+                    case 13:  var result = managment.CreatingDataTable(listOfProductReview);
+                            managment.PrintDataTable(result);break;
 
-                    case 12: flage = false; break;
+                    case 14: flage = false; break;
                 }
             }
         }
